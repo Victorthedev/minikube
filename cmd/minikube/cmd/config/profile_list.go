@@ -130,11 +130,11 @@ func profileStatus(p *config.Profile, api libmachine.API) cluster.State {
 
 func renderProfilesTable(ps [][]string) {
 	table := tablewriter.NewWriter(os.Stdout)
-	table.SetHeader([]string{"Profile", "VM Driver", "Runtime", "IP", "Port", "Version", "Status", "Nodes", "Active Profile", "Active Kubecontext"})
-	table.SetAutoFormatHeaders(false)
-	table.SetBorder(true)
-	table.SetCenterSeparator("|")
-	table.AppendBulk(ps)
+	table.Header([]string{"Profile", "VM Driver", "Runtime", "IP", "Port", "Version", "Status", "Nodes", "Active Profile", "Active Kubecontext"})
+	table.SetAutoFormatHeaders(0)
+	table.SetBorders(true)
+	table.SetColumnSeparator("|")
+	table.Bulk(ps)
 	table.Render()
 }
 
