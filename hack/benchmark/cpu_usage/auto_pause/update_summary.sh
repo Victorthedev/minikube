@@ -21,7 +21,7 @@ AUTOPAUSE_RESULTS=()
 OS=$(uname)
 
 if [[ ${OS} == "Darwin" ]]; then
-  TESTS_TARGETS=("idle" "minikube.hyperkit" "minikube.virtualbox" "minikube.docker" "docker" "k3d" "kind")
+  TESTS_TARGETS=("idle" "minikube.virtualbox" "minikube.docker" "docker" "k3d" "kind")
 elif [[ ${OS} == "Linux" ]]; then
   TESTS_TARGETS=("idle" "minikube.kvm2" "minikube.virtualbox" "minikube.docker" "docker" "k3d" "kind")
 fi

@@ -43,8 +43,6 @@ type ClusterConfig struct {
 	CPUs                    int
 	DiskSize                int
 	Driver                  string
-	HyperkitVpnKitSock      string   // Only used by the Hyperkit driver
-	HyperkitVSockPorts      []string // Only used by the Hyperkit driver
 	DockerEnv               []string // Each entry is formatted as KEY=VALUE.
 	ContainerVolumeMounts   []string // Only used by container drivers: Docker, Podman
 	InsecureRegistry        []string
@@ -61,9 +59,6 @@ type ClusterConfig struct {
 	APIServerPort           int
 	DockerOpt               []string // Each entry is formatted as KEY=VALUE.
 	DisableDriverMounts     bool     // Only used by virtualbox
-	NFSShare                []string
-	NFSSharesRoot           string
-	UUID                    string // Only used by hyperkit to restore the mac address
 	NoVTXCheck              bool   // Only used by virtualbox
 	DNSProxy                bool   // Only used by virtualbox
 	HostDNSResolver         bool   // Only used by virtualbox
@@ -86,7 +81,7 @@ type ClusterConfig struct {
 	Network                 string   // only used by docker driver
 	Subnet                  string   // only used by the docker and podman driver
 	MultiNodeRequested      bool
-	ExtraDisks              int // currently only implemented for hyperkit and kvm2
+	ExtraDisks              int // currently only implemented for kvm2, qemu2, vfkit, and krunkit drivers
 	CertExpiration          time.Duration
 	MountString             string
 	Mount9PVersion          string
@@ -111,6 +106,7 @@ type ClusterConfig struct {
 	AutoPauseInterval       time.Duration // Specifies interval of time to wait before checking if cluster should be paused
 	Rosetta                 bool          // Only used by vfkit driver
 	VmnetOffloading         bool          // Only used by krunkit driver
+	UUID                    string        // Used by krunkit and vfkit drivers for vmnet interface identification
 }
 
 // KubernetesConfig contains the parameters used to configure the VM Kubernetes.

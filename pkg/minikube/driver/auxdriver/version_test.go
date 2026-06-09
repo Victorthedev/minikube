@@ -20,7 +20,6 @@ import (
 	"testing"
 
 	"github.com/blang/semver/v4"
-	"k8s.io/minikube/pkg/minikube/driver"
 )
 
 func Test_minDriverVersion(t *testing.T) {
@@ -31,7 +30,6 @@ func Test_minDriverVersion(t *testing.T) {
 		mkV    string
 		want   semver.Version
 	}{
-		{"Hyperkit", driver.HyperKit, "1.1.1", *minHyperkitVersion},
 		{"Invalid", "_invalid_", "1.1.1", v("1.1.1")},
 	}
 	for _, tt := range tests {

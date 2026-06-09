@@ -172,13 +172,9 @@ func KicDriver() bool {
 	return DockerDriver() || PodmanDriver()
 }
 
-func HyperkitDriver() bool {
-	return matchDriverFlag("hyperkit")
-}
-
-// NeedsAuxDriver Returns true if the driver needs an auxiliary driver (kvm, hyperkit,..)
+// NeedsAuxDriver Returns true if the driver needs an auxiliary driver (kvm, ..)
 func NeedsAuxDriver() bool {
-	return HyperkitDriver()
+	return false
 }
 
 // VMDriver checks if the driver is a VM

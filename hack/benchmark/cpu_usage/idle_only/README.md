@@ -5,7 +5,7 @@ These scripts are for the benchmark of cpu usage, minikube vs kind vs k3d.
  * `update_summary.sh`: create one summary csv file of each drivers and products
  * `chart.go`: create bar chart graph as a png file
  
-In `benchmark_local_k8s.sh`, we compare minikube drivers(docker, hyperkit, virtualbox) and kind, k3d, Docker for Mac Kubernetes in case of macOS.   
+In `benchmark_local_k8s.sh`, we compare minikube drivers(docker, virtualbox) and kind, k3d, Docker for Mac Kubernetes in case of macOS.   
 In `benchmark_local_k8s.sh`, we compare minikube drivers(docker, kvm2, virtualbox) and kind, k3d in case of Linux.   
 `benchmark_local_k8s.sh` take these steps to measure idle usage after start-up.   
 

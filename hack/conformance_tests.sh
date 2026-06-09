@@ -21,7 +21,7 @@
 #   conformance_tests.sh <path to minikube> <flags>
 #
 # Example:
-#   conformance_tests.sh ./out/minikube --driver=hyperkit
+#   conformance_tests.sh ./out/minikube --driver=kvm2
 set -ex -o pipefail
 
 readonly PROFILE_NAME="k8sconformance"

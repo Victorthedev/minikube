@@ -94,7 +94,7 @@ func checkRoutePassword(t *testing.T) {
 func checkDNSForward(t *testing.T) {
 	// Not all platforms support DNS forwarding
 	if runtime.GOOS != "darwin" || KicDriver() {
-		t.Skip("DNS forwarding is only supported for Hyperkit on Darwin, skipping test DNS forwarding")
+		t.Skip("DNS forwarding is only supported on Darwin with VM drivers, skipping test DNS forwarding")
 	}
 }
 
